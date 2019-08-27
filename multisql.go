@@ -54,7 +54,6 @@ func readData(_db Database, storage *DataStore, wg *sync.WaitGroup, sql string, 
 	defer wg.Done()
 
 	connStr := fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable", _db.Host, _db.User, _db.Password, _db.Dbname)
-	//connStr := "postgres://postgres:123@192.168.56.101/beta1.6?sslmode=disable"
 	db, err := sqlx.Connect("postgres", connStr)
 
 	if err != nil {
